@@ -123,9 +123,9 @@
 \setlongtables
 
 \setlength\gnumericTableWidth{%
-	175pt+%
-	281pt+%
-	175pt+%
+	142pt+%
+	142pt+%
+	142pt+%
 0pt}
 \def\gumericNumCols{3}
 \setlength\gnumericTableWidthComplete{\gnumericTableWidth+%
@@ -145,14 +145,14 @@
 %%                                                                  %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\ifthenelse{\isundefined{\gnumericColA}}{\newlength{\gnumericColA}}{}\settowidth{\gnumericColA}{\begin{tabular}{@{}p{175pt*\gnumericScale}@{}}x\end{tabular}}
-\ifthenelse{\isundefined{\gnumericColB}}{\newlength{\gnumericColB}}{}\settowidth{\gnumericColB}{\begin{tabular}{@{}p{281pt*\gnumericScale}@{}}x\end{tabular}}
-\ifthenelse{\isundefined{\gnumericColC}}{\newlength{\gnumericColC}}{}\settowidth{\gnumericColC}{\begin{tabular}{@{}p{175pt*\gnumericScale}@{}}x\end{tabular}}
+\ifthenelse{\isundefined{\gnumericColC}}{\newlength{\gnumericColC}}{}\settowidth{\gnumericColC}{\begin{tabular}{@{}p{142pt*\gnumericScale}@{}}x\end{tabular}}
+\ifthenelse{\isundefined{\gnumericColD}}{\newlength{\gnumericColD}}{}\settowidth{\gnumericColD}{\begin{tabular}{@{}p{142pt*\gnumericScale}@{}}x\end{tabular}}
+\ifthenelse{\isundefined{\gnumericColE}}{\newlength{\gnumericColE}}{}\settowidth{\gnumericColE}{\begin{tabular}{@{}p{142pt*\gnumericScale}@{}}x\end{tabular}}
 
 \begin{longtable}[c]{%
-	b{\gnumericColA}%
-	b{\gnumericColB}%
 	b{\gnumericColC}%
+	b{\gnumericColD}%
+	b{\gnumericColE}%
 	}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -187,46 +187,46 @@
 %	\endlastfoot
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-	 \multicolumn{1}{p{\gnumericColA}||}%
-	{\gnumericPB{\raggedright}\gnumbox[l]{\textbf{Symbol}}}
-	&\multicolumn{1}{p{\gnumericColB}||}%
-	{\gnumericPB{\raggedright}\gnumbox[l]{\textbf{Description}}}
-	&\gnumericPB{\raggedright}\gnumbox[l]{\textbf{Value}}
+	 \multicolumn{1}{p{\gnumericColC}||}%
+	{\gnumericPB{\raggedright}\gnumbox[l]{$\textbf{Symbol}$}}
+	&\multicolumn{1}{p{\gnumericColD}||}%
+	{\gnumericPB{\raggedright}\gnumbox[l]{$\textbf{Description}$}}
+	&\gnumericPB{\raggedright}\gnumbox[l]{$\textbf{Value}$}
 \\
 \hhline{=::=::=}
-	 \multicolumn{1}{p{\gnumericColA}||}%
-	{\gnumericPB{\raggedright}\gnumbox[l]{\textbf{P(x)}}}
-	&\multicolumn{1}{p{\gnumericColB}||}%
-	{\gnumericPB{\raggedright}\gnumbox[l]{\textbf{Total Profit}}}
-	&\gnumericPB{\raggedright}\gnumbox[l]{\textbf{760000}}
+	 \multicolumn{1}{p{\gnumericColC}||}%
+	{\gnumericPB{\raggedright}\gnumbox[l]{$x$}}
+	&\multicolumn{1}{p{\gnumericColD}||}%
+	{\gnumericPB{\raggedright}\gnumbox[l]{$Number of Units$}}
+	&\gnumericPB{\raggedright}\gnumbox[l]{$4000$}
 \\
 \hhline{=::=::=}
-	 \multicolumn{1}{p{\gnumericColA}||}%
-	{\gnumericPB{\raggedright}\gnumbox[l]{\textbf{P}}}
-	&\multicolumn{1}{p{\gnumericColB}||}%
-	{\gnumericPB{\raggedright}\gnumbox[l]{\textbf{Profit per unit}}}
-	&\gnumericPB{\raggedright}\gnumbox[l]{\textbf{190}}
+	 \multicolumn{1}{p{\gnumericColC}||}%
+	{\gnumericPB{\raggedright}\gnumbox[l]{$P(x)$}}
+	&\multicolumn{1}{p{\gnumericColD}||}%
+	{\gnumericPB{\raggedright}\gnumbox[l]{$Total Price$}}
+	&\gnumericPB{\raggedright}\gnumbox[l]{$760000$}
 \\
 \hhline{=::=::=}
-	 \multicolumn{1}{p{\gnumericColA}||}%
-	{\gnumericPB{\raggedright}\gnumbox[l]{\textbf{C(x)}}}
-	&\multicolumn{1}{p{\gnumericColB}||}%
-	{\gnumericPB{\raggedright}\gnumbox[l]{\textbf{Cost per unit}}}
-	&\gnumericPB{\raggedright}\gnumbox[l]{\textbf{560040}}
+	 \multicolumn{1}{p{\gnumericColC}||}%
+	{\gnumericPB{\raggedright}\gnumbox[l]{$P$}}
+	&\multicolumn{1}{p{\gnumericColD}||}%
+	{\gnumericPB{\raggedright}\gnumbox[l]{$Price per unit$}}
+	&\gnumericPB{\raggedright}\gnumbox[l]{$190$}
 \\
 \hhline{=::=::=}
-	 \multicolumn{1}{p{\gnumericColA}||}%
-	{\gnumericPB{\raggedright}\gnumbox[l]{\textbf{x}}}
-	&\multicolumn{1}{p{\gnumericColB}||}%
-	{\gnumericPB{\raggedright}\gnumbox[l]{\textbf{Number of units}}}
-	&\gnumericPB{\raggedright}\gnumbox[l]{\textbf{4000}}
+	 \multicolumn{1}{p{\gnumericColC}||}%
+	{\gnumericPB{\raggedright}\gnumbox[l]{$C(x)$}}
+	&\multicolumn{1}{p{\gnumericColD}||}%
+	{\gnumericPB{\raggedright}\gnumbox[l]{$Total Cost$}}
+	&\gnumericPB{\raggedright}\gnumbox[l]{$560040$}
 \\
 \hhline{=::=::=}
-	 \multicolumn{1}{p{\gnumericColA}||}%
-	{\gnumericPB{\raggedright}\gnumbox[l]{\textbf{Profit}}}
-	&\multicolumn{1}{p{\gnumericColB}||}%
-	{\gnumericPB{\raggedright}\gnumbox[l]{\textbf{Total profit}}}
-	&\gnumericPB{\raggedright}\gnumbox[l]{\textbf{199960}}
+	 \multicolumn{1}{p{\gnumericColC}||}%
+	{\gnumericPB{\raggedright}\gnumbox[l]{$Profit$}}
+	&\multicolumn{1}{p{\gnumericColD}||}%
+	{\gnumericPB{\raggedright}\gnumbox[l]{$Total Profit$}}
+	&\gnumericPB{\raggedright}\gnumbox[l]{$199960$}
 \\
 \end{longtable}
 
