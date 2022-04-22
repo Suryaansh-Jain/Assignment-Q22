@@ -123,11 +123,12 @@
 \setlongtables
 
 \setlength\gnumericTableWidth{%
-	142pt+%
-	142pt+%
-	142pt+%
+	53pt+%
+	53pt+%
+	82pt+%
+	53pt+%
 0pt}
-\def\gumericNumCols{3}
+\def\gumericNumCols{4}
 \setlength\gnumericTableWidthComplete{\gnumericTableWidth+%
          \tabcolsep*\gumericNumCols*2+\arrayrulewidth*\gumericNumCols}
 \ifthenelse{\lengthtest{\gnumericTableWidthComplete > \linewidth}}%
@@ -145,14 +146,17 @@
 %%                                                                  %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\ifthenelse{\isundefined{\gnumericColC}}{\newlength{\gnumericColC}}{}\settowidth{\gnumericColC}{\begin{tabular}{@{}p{142pt*\gnumericScale}@{}}x\end{tabular}}
-\ifthenelse{\isundefined{\gnumericColD}}{\newlength{\gnumericColD}}{}\settowidth{\gnumericColD}{\begin{tabular}{@{}p{142pt*\gnumericScale}@{}}x\end{tabular}}
-\ifthenelse{\isundefined{\gnumericColE}}{\newlength{\gnumericColE}}{}\settowidth{\gnumericColE}{\begin{tabular}{@{}p{142pt*\gnumericScale}@{}}x\end{tabular}}
+\ifthenelse{\isundefined{\gnumericColA}}{\newlength{\gnumericColA}}{}\settowidth{\gnumericColA}{\begin{tabular}{@{}p{53pt*\gnumericScale}@{}}x\end{tabular}}
+\ifthenelse{\isundefined{\gnumericColB}}{\newlength{\gnumericColB}}{}\settowidth{\gnumericColB}{\begin{tabular}{@{}p{75pt*\gnumericScale}@{}}x\end{tabular}}
+\ifthenelse{\isundefined{\gnumericColC}}{\newlength{\gnumericColC}}{}\settowidth{\gnumericColC}{\begin{tabular}{@{}p{83pt*\gnumericScale}@{}}x\end{tabular}}
+\ifthenelse{\isundefined{\gnumericColD}}{\newlength{\gnumericColD}}{}\settowidth{\gnumericColD}{\begin{tabular}{@{}p{53pt*\gnumericScale}@{}}x\end{tabular}}
 
-\begin{longtable}[c]{%
+	\begin{center}
+\begin{tabular}[c]{%
+	b{\gnumericColA}%
+	b{\gnumericColB}%
 	b{\gnumericColC}%
 	b{\gnumericColD}%
-	b{\gnumericColE}%
 	}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -163,72 +167,90 @@
 %%  the first, last or every page. Use \multicolumn if you want.    %%
 
 %%  Header for the first page.                                      %%
-%	\multicolumn{3}{c}{The First Header} \\ \hline 
+%	\multicolumn{4}{c}{The First Header} \\ \hline 
 %	\multicolumn{1}{c}{colTag}	%Column 1
 %	&\multicolumn{1}{c}{colTag}	%Column 2
+%	&\multicolumn{1}{c}{colTag}	%Column 3
 %	&\multicolumn{1}{c}{colTag}	\\ \hline %Last column
 %	\endfirsthead
 
 %%  The running header definition.                                  %%
 %	\hline
-%	\multicolumn{3}{l}{\ldots\small\slshape continued} \\ \hline
+%	\multicolumn{4}{l}{\ldots\small\slshape continued} \\ \hline
 %	\multicolumn{1}{c}{colTag}	%Column 1
 %	&\multicolumn{1}{c}{colTag}	%Column 2
+%	&\multicolumn{1}{c}{colTag}	%Column 3
 %	&\multicolumn{1}{c}{colTag}	\\ \hline %Last column
 %	\endhead
 
 %%  The running footer definition.                                  %%
 %	\hline
-%	\multicolumn{3}{r}{\small\slshape continued\ldots} \\
+%	\multicolumn{4}{r}{\small\slshape continued\ldots} \\
 %	\endfoot
 
 %%  The ending footer definition.                                   %%
-%	\multicolumn{3}{c}{That's all folks} \\ \hline 
+%	\multicolumn{4}{c}{That's all folks} \\ \hline 
 %	\endlastfoot
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-	 \multicolumn{1}{p{\gnumericColC}||}%
-	{\gnumericPB{\raggedright}\gnumbox[l]{$\textbf{Symbol}$}}
-	&\multicolumn{1}{p{\gnumericColD}||}%
-	{\gnumericPB{\raggedright}\gnumbox[l]{$\textbf{Description}$}}
-	&\gnumericPB{\raggedright}\gnumbox[l]{$\textbf{Value}$}
+\hhline{|-|-|-~}
+	 \multicolumn{1}{|p{\gnumericColA}|}%
+	{\gnumericPB{\centering}\gnumbox{\textbf{Symbol}}}
+	&\multicolumn{1}{p{\gnumericColB}|}%
+	{\gnumericPB{\centering}\gnumbox{\textbf{Value}}}
+	&\multicolumn{1}{p{\gnumericColC}|}%
+	{\gnumericPB{\centering}\gnumbox{\textbf{Description}}}
+	&
 \\
-\hhline{=::=::=}
-	 \multicolumn{1}{p{\gnumericColC}||}%
-	{\gnumericPB{\raggedright}\gnumbox[l]{$x$}}
-	&\multicolumn{1}{p{\gnumericColD}||}%
-	{\gnumericPB{\raggedright}\gnumbox[l]{$Number of Units$}}
-	&\gnumericPB{\raggedright}\gnumbox[l]{$4000$}
+\hhline{|---|~}
+	 \multicolumn{1}{|p{\gnumericColA}|}%
+	{\gnumericPB{\centering}\gnumbox{$x$}}
+	&\multicolumn{1}{p{\gnumericColB}|}%
+	{\gnumericPB{\centering}\gnumbox{$4000$}}
+	&\multicolumn{1}{p{\gnumericColC}|}%
+	{\gnumericPB{\centering}\gnumbox{Number of Units}}
+	&
 \\
-\hhline{=::=::=}
-	 \multicolumn{1}{p{\gnumericColC}||}%
-	{\gnumericPB{\raggedright}\gnumbox[l]{$P(x)$}}
-	&\multicolumn{1}{p{\gnumericColD}||}%
-	{\gnumericPB{\raggedright}\gnumbox[l]{$Total Price$}}
-	&\gnumericPB{\raggedright}\gnumbox[l]{$760000$}
+\hhline{|---|~}
+	 \multicolumn{1}{|p{\gnumericColA}|}%
+	{\gnumericPB{\centering}\gnumbox{$P(x)$}}
+	&\multicolumn{1}{p{\gnumericColB}|}%
+	{\gnumericPB{\centering}\gnumbox{$760000$}}
+	&\multicolumn{1}{p{\gnumericColC}|}%
+	{\gnumericPB{\centering}\gnumbox{Total Price}}
+	&
 \\
-\hhline{=::=::=}
-	 \multicolumn{1}{p{\gnumericColC}||}%
-	{\gnumericPB{\raggedright}\gnumbox[l]{$P$}}
-	&\multicolumn{1}{p{\gnumericColD}||}%
-	{\gnumericPB{\raggedright}\gnumbox[l]{$Price per unit$}}
-	&\gnumericPB{\raggedright}\gnumbox[l]{$190$}
+\hhline{|---|~}
+	 \multicolumn{1}{|p{\gnumericColA}|}%
+	{\gnumericPB{\centering}\gnumbox{$P$}}
+	&\multicolumn{1}{p{\gnumericColB}|}%
+	{\gnumericPB{\centering}\gnumbox{$190$}}
+	&\multicolumn{1}{p{\gnumericColC}|}%
+	{\gnumericPB{\centering}\gnumbox{Price per unit}}
+	&
 \\
-\hhline{=::=::=}
-	 \multicolumn{1}{p{\gnumericColC}||}%
-	{\gnumericPB{\raggedright}\gnumbox[l]{$C(x)$}}
-	&\multicolumn{1}{p{\gnumericColD}||}%
-	{\gnumericPB{\raggedright}\gnumbox[l]{$Total Cost$}}
-	&\gnumericPB{\raggedright}\gnumbox[l]{$560040$}
+\hhline{|---|~}
+	 \multicolumn{1}{|p{\gnumericColA}|}%
+	{\gnumericPB{\centering}\gnumbox{$C(x)$}}
+	&\multicolumn{1}{p{\gnumericColB}|}%
+	{\gnumericPB{\centering}\gnumbox{$560040$}}
+	&\multicolumn{1}{p{\gnumericColC}|}%
+	{\gnumericPB{\centering}\gnumbox{Total Cost}}
+	&
 \\
-\hhline{=::=::=}
-	 \multicolumn{1}{p{\gnumericColC}||}%
-	{\gnumericPB{\raggedright}\gnumbox[l]{$Profit$}}
-	&\multicolumn{1}{p{\gnumericColD}||}%
-	{\gnumericPB{\raggedright}\gnumbox[l]{$Total Profit$}}
-	&\gnumericPB{\raggedright}\gnumbox[l]{$199960$}
+\hhline{|---|~}
+	 \multicolumn{1}{|p{\gnumericColA}|}%
+	{\gnumericPB{\centering}\gnumbox{$Profit$}}
+	&\multicolumn{1}{p{\gnumericColB}|}%
+	{\gnumericPB{\centering}\gnumbox{$199960$}}
+	&\multicolumn{1}{p{\gnumericColC}|}%
+	{\gnumericPB{\centering}\gnumbox{Total Profit}}
+	&
 \\
-\end{longtable}
+\hhline{|-|-|-|~}
+\end{tabular}
+	\end{center}
 
 \ifthenelse{\isundefined{\languageshorthands}}{}{\languageshorthands{\languagename}}
 \gnumericTableEnd
+
