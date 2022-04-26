@@ -203,21 +203,34 @@ maximum. What is the price per unit and total profit at the level of production?
 		Profit &= p(x) - c(x)
 	\end{align}
 	
-	For maximum profit $\frac{dProfit}{dx} = 0$
+	Now let $Profit = y = f(x)$
+	
+	
+	We need to optimize $profit$ given that $x > 0$.
+	
+	
+	Let us find $\nabla f(x)$
+	%For maximum profit $\frac{dProfit}{dx} = 0$
 	
 	\begin{align}
-	    \implies 100 - \frac{x}{40} &= 0 \\
-	    \implies x &= 4000
+	    \implies \frac{dy}{dx} &= 100 - \frac{x}{40} \\
+	    \implies f'(x) &= 100 - \frac{x}{40} 
 	\end{align}
 	
-	The total production level $x = 4000$
+	We will be able to find $x$ for maximum $f(x)$ by iterating the following equation till $f'(x_{k-1})$ approaches 0.
 	
-	Price per unit $= P(x) = 190$
 	\begin{align}
-        &Profit= 199960
+	    x_k = x_{k-1} - (\alpha f'(x_{k-1}))
 	\end{align}
 	
-	Total profit = 199960
+	When $f'(x_{k-1}) = 0$, we have
+	
+	\begin{align}
+	    f'(x_{k-1}) &= 100 - \frac{x_{k-1}}{40} = 0 \\
+	    \implies x_{k-1} &= 100.40 = 4000
+	\end{align}
+	
+	This means that profit is maximum at $x=4000$ and the corresponding values are in the table
 		
 \begin{table}[h]
     \centering
