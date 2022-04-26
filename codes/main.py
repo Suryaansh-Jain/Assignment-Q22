@@ -21,6 +21,6 @@ plt.axvline(x = 0,color = "black")
 
 plt.xlabel("Number of units")
 plt.ylabel("Cost")
-plt.grid
+plt.grid()
 plt.legend(loc='best', prop={'size':11})
 plt.show()
