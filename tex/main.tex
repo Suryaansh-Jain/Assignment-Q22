@@ -208,26 +208,40 @@ maximum. What is the price per unit and total profit at the level of production?
 	
 	We need to optimize $profit$ given that $x > 0$.
 	
+	because $x>0$ we set $x = t^2$
 	
-	Let us find $\nabla f(x)$
-	%For maximum profit $\frac{dProfit}{dx} = 0$
-	
+	for this lets use the Lagrange multipliers,
 	\begin{align}
-	    \implies \frac{dy}{dx} &= 100 - \frac{x}{40} \\
-	    \implies f'(x) &= 100 - \frac{x}{40} 
+	    \mathcal{L}(x, \lambda) = f(x) - \lambda g(x).
 	\end{align}
 	
-	We will be able to find $x$ for maximum $f(x)$ by iterating the following equation till $f'(x_{k-1})$ approaches 0.
+	Where $g(x)$ is the constraint function, here we do not have any constraints as $x = t^2$
+	is always going to be positive.
 	
+	Let,
 	\begin{align}
-	    x_k = x_{k-1} - (\alpha f'(x_{k-1}))
+	    k(t) = f(t^2)
 	\end{align}
 	
-	When $f'(x_{k-1}) = 0$, we have
-	
 	\begin{align}
-	    f'(x_{k-1}) &= 100 - \frac{x_{k-1}}{40} = 0 \\
-	    \implies x_{k-1} &= 100.40 = 4000
+	    \mathcal{L}(t, \lambda) = k(t) - \lambda g(t).
+	\end{align}
+	
+	Now,
+	\begin{align}
+	    \nabla(\mathcal{L}) &= 0\\
+	    \implies dx(f'(x) - \lambda g'(x)) &\hat{i} + d\lambda (-g(x)) \hat{j} = 0 \\
+	    \implies f'(x) - \lambda g'(x) &= 0 \\
+	    \implies -g(x) &= 0;
+	\end{align}
+	
+	Now, from the above equations
+	\begin{align}
+	    k'(t) &= 0 \\
+	    \implies 2tf'(t^2) &= 0 \\ 
+	    \implies f'(t^2) &= 0\\
+	    \implies 100 - \frac{t^2}{100} &= 0 \\
+	    \implies t =& \sqrt{4000}
 	\end{align}
 	
 	This means that profit is maximum at $x=4000$ and the corresponding values are in the table
