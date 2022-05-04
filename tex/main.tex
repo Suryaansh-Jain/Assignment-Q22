@@ -208,22 +208,11 @@ maximum. What is the price per unit and total profit at the level of production?
 	
 	We need to optimize $profit$ given that $x > 0$.
 	
-	because $x>0$ we set $x = t^2$
-	
-	for this lets use the Lagrange multipliers,
+	For this lets use the Lagrange multipliers,
 	\begin{align}
 	    \mathcal{L}(x, \lambda) = f(x) - \lambda g(x).
 	\end{align}
-	
-	Where $g(x)$ is the constraint function, here we do not have any constraints as $x = t^2$
-	is always going to be positive.
-	
-	Let,
-	\begin{align}
-	    k(t) = f(t^2) \\
-	    \mathcal{L}(t, \lambda) = k(t) - \lambda g(t).
-	\end{align}
-	
+
 	Now,
 	\begin{align}
 	    \nabla(\mathcal{L}) &= 0\\
@@ -232,13 +221,19 @@ maximum. What is the price per unit and total profit at the level of production?
 	    \implies -g(x) &= 0;
 	\end{align}
 	
-	Now, from the above equations
+	For our case we have $g(x) = x - |x| = 0$
 	\begin{align}
-	    k'(t) &= 0 \\
-	    \implies 2tf'(t^2) &= 0 \\ 
-	    \implies f'(t^2) &= 0\\
-	    \implies 100 - \frac{t^2}{100} &= 0 \\
-	    \implies t =& \sqrt{4000}
+	    g'(x) &= 0\ \forall x>0 \\
+	    g'(x) &= -2\ \forall x<0
+	\end{align}
+	
+	Now plugging the values,
+	\begin{align}
+	    \implies g(x) &= 0 \implies x>0 \\
+	    \implies g'(x) &= 0 \\
+	    \implies f'(x) &= 0 \\
+	    \implies \frac{x}{40} - 100 &= 0 \\
+	    \implies x =& 4000
 	\end{align}
 	
 	This means that profit is maximum at $x=4000$ and the corresponding values are in the table
