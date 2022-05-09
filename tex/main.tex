@@ -2,11 +2,10 @@
 \let\negthickspace\undefined
 %\RequirePackage{amsmath}
 \documentclass[journal,12pt,twocolumn]{IEEEtran}
-%
 % \usepackage{setspace}
- \usepackage{gensymb}
+\usepackage{gensymb}
 %\doublespacing
- \usepackage{polynom}
+\usepackage{polynom}
 %\singlespacing
 %\usepackage{silence}
 %Disable all warnings issued by latex starting with "You have..."
@@ -37,8 +36,8 @@
 %\usepackage{algorithm}
 %\usepackage{algpseudocode}
 \usepackage{enumitem}
- \usepackage{mathtools}
- \usepackage{tikz}
+\usepackage{mathtools}
+\usepackage{tikz}
 % \usepackage{circuitikz}
 % \usepackage{verbatim}
 %\usepackage{tfrupee}
@@ -206,11 +205,16 @@ maximum. What is the price per unit and total profit at the level of production?
 	Now let $Profit = y = f(x)$
 	
 	
-	We need to optimize $profit$ given that $x > 0$.
+	We need to optimize $profit$ given that $x > 0$
 	
 	For this lets use the Lagrange multipliers,
 	\begin{align}
 	    \mathcal{L}(x, \lambda) = f(x) - \lambda g(x).
+	\end{align}
+	
+	We can also do this by minimising $-f(x)$ subject to
+	\begin{align}
+	    g(x) = -x \leq 0
 	\end{align}
 
 	Now,
@@ -218,13 +222,13 @@ maximum. What is the price per unit and total profit at the level of production?
 	    \nabla(\mathcal{L}) &= 0\\
 	    \implies dx(f'(x) - \lambda g'(x)) &\hat{i} + d\lambda (-g(x)) \hat{j} = 0 \\
 	    \implies f'(x) - \lambda g'(x) &= 0 \\
-	    \implies -g(x) &= 0;
+	    \implies -g(x) &= 0
 	\end{align}
 	
 	For our case we have $g(x) = x - |x| = 0$
 	\begin{align}
-	    g'(x) &= 0 \forall x>0 \\
-	    g'(x) &= -2 \forall x<0
+	    g'(x) &= 0\ \forall x>0 \\
+	    g'(x) &= -2\ \forall x<0
 	\end{align}
 	
 	Now plugging the values,
